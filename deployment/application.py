@@ -8,8 +8,8 @@ import os
 import dotenv
 
 dotenv.load_dotenv(".env", verbose=True)
-final_pipeline = load('../files/revenue_prediction_final_pipeline.joblib')
-expected_columns = load('../files/input_columns.joblib')
+final_pipeline = load('revenue_prediction_final_pipeline.joblib')
+expected_columns = load('input_columns.joblib')
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
