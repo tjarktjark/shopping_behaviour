@@ -25,6 +25,7 @@ def verify_password(username, password):
     if username in users and check_password_hash(users.get(username), password):
         return username
 
+
 def check_validity(expected_cols, given_cols):
     intersection = [value for value in expected_cols if value in given_cols]
     if len(expected_cols) == len(intersection):
@@ -53,3 +54,7 @@ def predict_revenue():
         return jsonify({'class': str(pred_class), 'probability': str(pred_proba)}), 201
     else:
         abort(400, {'message': 'Bad input. Columns expected: %s' % str(expected_columns)})
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
