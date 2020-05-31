@@ -41,13 +41,11 @@ def hello():
 
 
 @auth.login_required
-@app.route('/predict', methods=['GET'])
+@app.route("/predict", methods=['GET', 'POST'])
 def predict_revenue():
     if not request.json:
         abort(400, {'message': 'No JSON body received.'})
-
     data = pd.DataFrame.from_records([request.json])
-
     if check_validity(expected_cols=expected_columns, given_cols=data.columns.tolist()):
         pred_class = final_pipeline.predict(data)[0]
         pred_proba = round(final_pipeline.predict_proba(data)[0][1], 4)
@@ -57,4 +55,4 @@ def predict_revenue():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True, port=8080)

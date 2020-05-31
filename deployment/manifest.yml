@@ -1,0 +1,10 @@
+---
+applications:
+- name: shopping-behaviour-api
+  path: .
+  health-check-type: process
+  memory: 256M
+  instances: 1
+  env:
+    USER_1: test_user
+    PASSWORD_1: sharkyshark95
