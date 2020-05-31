@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "f0adbfa2-bbcd-4200-a3bf-dfb477417aeb",
+		"name": "shopping_behaviour",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost 5000, welcome route",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "sharkyshark95",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test_user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost 5000, predict route",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "sharkyshark95",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test_user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Administrative\":2.0,\"Administrative_Duration\":35.3,\"Informational\":0.0,\"Informational_Duration\":0.0,\"ProductRelated\":2.0,\"ProductRelated_Duration\":20.1,\"BounceRates\":0.0,\"ExitRates\":0.0,\"PageValues\":40.27815244,\"SpecialDay\":0.0,\"Month\":\"Sep\",\"OperatingSystems\":2,\"Browser\":2,\"Region\":1,\"TrafficType\":6,\"VisitorType\":\"New_Visitor\",\"Weekend\":false}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/predict",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "sharkyshark95",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "test_user",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}

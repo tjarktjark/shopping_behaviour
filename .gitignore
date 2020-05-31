@@ -76,7 +76,7 @@ docs/_build/
 target/
 
 # Jupyter Notebook
-.ipynb_checkpoints
+jupyter_notebooks/.ipynb_checkpoints
 
 # IPython
 profile_default/
@@ -105,7 +105,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+deployment/.env
 .venv
 env/
 venv/
@@ -139,5 +139,5 @@ cython_debug/
 
 # others
 .DS_Store
-.ipynb_checkpoints
-.idea
+__jupyter_notebooks/.ipynb_checkpoints__/
+__.idea__/
